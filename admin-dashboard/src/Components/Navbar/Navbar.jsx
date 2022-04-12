@@ -6,7 +6,7 @@ import FullscreenOutlinedIcon from '@mui/icons-material/FullscreenOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
-import Avater from './components/Image/profile.jpg'
+import Avater from '../Image/profile.jpg'
 const Navbar = () => {
   return (
     <div className='navbar'>
@@ -19,11 +19,16 @@ const Navbar = () => {
                 <div className="item"><LanguageIcon className="icons"/> English</div>
                 <div className="item"><DarkModeOutlinedIcon className="icons"/></div>
                 <div className="item"><FullscreenOutlinedIcon className="icons"/></div>
-                <div className="item"><NotificationsNoneOutlinedIcon className="icons"/></div>
-                <div className="item"><ChatBubbleOutlineOutlinedIcon className="icons"/></div>
-                <div className="item"><FormatListBulletedOutlinedIcon className="icons"/></div>
+                <div className="item"><NotificationsNoneOutlinedIcon className="icons"/>
+                <div className="counter">1</div>
+                </div>
+                <div className="item"><ChatBubbleOutlineOutlinedIcon className="icons"/>
+                  <div className="counter">2</div>
+                </div>
+                <div className="item"><FormatListBulletedOutlinedIcon className="icons"/>
+                 </div>
                 <div className="item">
-                  <img src={Avater} alt="" className="avater" />
+                  <img src={Avater} className="avater" />
                 </div>
             </div>
         </div>

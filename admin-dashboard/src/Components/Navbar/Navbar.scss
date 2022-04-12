@@ -31,10 +31,12 @@
     .items{
         display: flex;
         align-items: center;
+        
         .item{
             display: flex;
             align-items: center;
             margin-right: 20px;
+            position: relative;
             .icons{
                 font-size: 20px;
             }
@@ -42,6 +44,20 @@
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
+            }
+            .counter{
+                width: 15px;
+                height: 15px;background-color: red;
+                border-radius: 50%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                font-weight: bold;
+                position: absolute;
+                top: -5px;
+                right: -5px;
             }
         }
     }
