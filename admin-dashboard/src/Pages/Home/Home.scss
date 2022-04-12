@@ -6,10 +6,13 @@
         background-color: lightblue;
         flex: 7;
         color: black;
-        .widgets{
+        .widgets, .charts{
             display: flex;
             padding: 20px;
             gap: 20px;
+        }
+        .charts{
+            padding: 1px 20px;
         }
     }
 }
