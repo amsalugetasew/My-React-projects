@@ -1,7 +1,7 @@
 import './Featured.scss'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-// import { CircularProgressbar } from 'react-circular-progressbar';
-// import 'react-circular-progressbar/dist/styles.css';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const Featured = () => {
@@ -13,7 +13,7 @@ const Featured = () => {
         </div>
         <div className="bottom">
             <div className="featureChart">
-                {/* <CircularProgressbar value={70} text={"70%"} strokeWidth={5}/> */}
+                <CircularProgressbar value={70} text={"70%"} strokeWidth={4}/>
             </div>
             <p className="title">Total Sales Made Today</p>
             <p className="amount">$420</p>
