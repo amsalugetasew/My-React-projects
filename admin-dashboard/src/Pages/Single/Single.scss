@@ -1,4 +1,73 @@
 .single{
-    background-color: rebeccapurple;
-    color: white;
+    background-color: rgb(217, 190, 245);
+    display: flex;
+    .singleContainer{
+        flex: 6;
+        .top{
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+            .left{
+                flex: 1;
+                box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+                -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+                padding: 20px;
+                background-color: white;
+                position: relative;
+                .editButton{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 5;
+                    font-size: 15px;
+                    margin-right: 10px;
+                    margin-top: 10px;
+                    color: rgb(215, 77, 215);
+                    background-color: #9c51f82c;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    border: 1px solid cornflowerblue;
+                }
+                .item{
+                    display: flex;
+                    gap: 20px;
+                    .itemImage{
+                        width: 100px;
+                        height: 100px;
+                        padding: 5px;
+                        border-radius: 50%;
+                    }
+                    .details{
+                        .itemTitle{
+                            margin-bottom: 10px;
+                            color: #555;
+                        }
+                        .detalItem{
+                            margin-bottom: 10px;
+                            font-size: 14px;
+                            .itemKey{
+                                font-weight: bold;
+                                color: gray;
+                                margin-right: 5px;
+                            }
+                            .itemValue{
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+            .right{
+                flex: 2;
+                box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+                -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+                background-color: #eee;
+            }
+        }
+    }
+    .title{
+        font-size: 26px;
+        color: lightgray;
+        margin-bottom: 20px;
+    }
 }
