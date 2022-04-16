@@ -1,5 +1,5 @@
 .single{
-    background-color: rgb(217, 190, 245);
+    // background-color: rgb(217, 190, 245);
     display: flex;
     .singleContainer{
         flex: 6;
@@ -12,7 +12,7 @@
                 box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
                 -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
                 padding: 20px;
-                background-color: white;
+                // background-color: white;
                 position: relative;
                 .editButton{
                     position: absolute;
@@ -23,7 +23,7 @@
                     margin-right: 10px;
                     margin-top: 10px;
                     color: rgb(215, 77, 215);
-                    background-color: #9c51f82c;
+                    // background-color: #9c51f82c;
                     cursor: pointer;
                     border-radius: 5px;
                     border: 1px solid cornflowerblue;
@@ -61,9 +61,16 @@
                 flex: 2;
                 box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
                 -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
-                background-color: #eee;
+                // background-color: #eee;
             }
         }
+    }
+    .bottom{
+        box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+        // background-color: #eee;
+        margin: 10px 20px;
+        padding: 20px;
     }
     .title{
         font-size: 26px;

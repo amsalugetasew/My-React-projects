@@ -1,9 +1,7 @@
 .home{
-    background-color: rebeccapurple;
     color: white;
     display: flex;
     .homeContainer{
-        background-color: lightblue;
         flex: 7;
         color: black;
         .widgets, .charts{
@@ -19,7 +17,7 @@
             -webkit-box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
             padding: 20px;
             margin: 20px;
-            background-color: rgb(252, 215, 215);
+            // background-color: rgb(252, 215, 215);
             .listTitle{
                 font-weight: 500;
                 color: gray;

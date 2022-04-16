@@ -1,9 +1,27 @@
 .datatable {
-    background-color: #fff;
+    // background-color: #fff;
     height: 500px;
     padding: 30px;
     width: 100%;
-
+    .dataTableTitle{
+        width: 90%;
+        font-size: 24px;
+        color: gray;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .link{
+            text-decoration: none;
+            color: green;
+            font-size: small;
+            font-weight: 400;
+            border: 1px solid green;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
     .whitespace {
         white-space: pre-wrap;
     }

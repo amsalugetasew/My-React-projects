@@ -12,23 +12,36 @@ import SystemSecurityUpdateGoodOutlinedIcon from '@mui/icons-material/SystemSecu
 import PaymentIcon from '@mui/icons-material/Payment';
 import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
+import {Link} from "react-router-dom"
+import {useContext} from "react"
+import { DarkModeContext } from '../../Context/DarkModeContext';
 const Sidebar = () => {
+  const {dispatch} = useContext(DarkModeContext)
   return (
     <div className='sidebar'>
       <div className="top">
+        <Link to="/" style={{textDecoration: "none"}}>
         <MenuSharpIcon/>
         <span className="logo">
           GechAdmin
         </span>
+        </Link>
+        
       </div>
       <hr />
       <div className="center">
         <ul>
           <p className="title">Main</p>
+          <Link to="/" style={{textDecoration: "none"}}>
           <li><DashboardIcon/><span>Dashboard</span></li>
+          </Link>
           <p className="title">List</p>
+          <Link to="/users" style={{textDecoration: "none"}}>
           <li><PeopleOutlineIcon/><span>Users</span></li>
+          </Link>
+          <Link to="/products" style={{textDecoration: "none"}}>
           <li><ProductionQuantityLimitsIcon/><span>Products</span></li>
+          </Link>
           <li><PaymentIcon/><span>Orders</span></li>
           <li><AirportShuttleOutlinedIcon/><span>Delivery</span></li>
           <p className="title">Usefull</p>
@@ -44,9 +57,9 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div className="colorOption" onClick={() => dispatch({type: "LIGHT"})}></div>
+        <div className="colorOption" onClick={() => dispatch({type: "DARK"})}></div>
+        <div className="colorOption" onClick={() => dispatch({type: "TOGGLE"})}></div>
       </div>
     </div>
   )

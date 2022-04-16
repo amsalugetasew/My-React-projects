@@ -1,6 +1,8 @@
 import "./Single.scss"
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import Navbar from '../../Components/Navbar/Navbar'
+import Chart from '../../Components/Chart/Chart'
+import Table from '../../Components/Table/Table'
 import Avater from '../../Components/Image/profile.jpg'
 const Single = () => {
   return (
@@ -35,9 +37,13 @@ const Single = () => {
             </div>
             </div>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <Chart aspect={3 / 1} title="User Spending {Last 6 months}"/>
+        </div>
         </div>        
         <div className="bottom">
+        <h1 className="title">Last Transactions</h1>
+          <Table/>
         </div>
       </div>
     </div>

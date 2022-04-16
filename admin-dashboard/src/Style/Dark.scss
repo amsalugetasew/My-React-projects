@@ -1,0 +1,113 @@
+.app.dark{
+    background-color: #333;
+    color: rgb(156, 156, 156);
+    .chartGrid{
+        stroke: rgb(53, 40, 40);
+    }
+    .table{
+        background-color: #111;
+        .tableCell{
+            color: gray;
+        }
+    }
+    .navbar{
+        background-color: #333;
+        color: gray;
+        .search{
+            border-color: gray;
+        }
+
+    }
+    .sidebar{
+        background-color: #333;
+        border-color: #666;
+        .top{
+            .logo{
+                color: #999;
+            }
+        }
+        hr{
+            border-color: #666;
+        }
+        ul{
+            li{
+                &:hover{
+                    background-color: #666;
+                }
+                .icon{
+                    color: #999;
+                }
+            }
+        }
+    }
+    .datatable{
+        .dataGrid{
+            color: gray;
+            border: none;
+            .celWidthStatus,.viewButton, .editButton, .deleteButton{
+                color: gray;
+                bottom: none;
+            }
+        }
+    }
+    input{
+        background-color: transparent;
+    }
+}
+
+#app#green{
+    background-color: rgb(15, 239, 93);
+    color: rgb(156, 156, 156);
+    .chartGrid{
+        stroke: rgb(53, 40, 40);
+    }
+    .table{
+        background-color: #111;
+        .tableCell{
+            color: gray;
+        }
+    }
+    .navbar{
+        background-color: #333;
+        color: gray;
+        .search{
+            border-color: gray;
+        }
+
+    }
+    .sidebar{
+        background-color: #333;
+        border-color: #666;
+        .top{
+            .logo{
+                color: #999;
+            }
+        }
+        hr{
+            border-color: #666;
+        }
+        ul{
+            li{
+                &:hover{
+                    background-color: #666;
+                }
+                .icon{
+                    color: #999;
+                }
+            }
+        }
+    }
+    .datatable{
+        .dataGrid{
+            color: gray;
+            border: none;
+            .celWidthStatus,.viewButton, .editButton, .deleteButton{
+                color: gray;
+                bottom: none;
+            }
+        }
+    }
+    input{
+        background-color: transparent;
+    }
+}
