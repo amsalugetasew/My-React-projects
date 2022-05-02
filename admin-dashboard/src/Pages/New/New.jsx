@@ -4,8 +4,19 @@ import Sidebar from '../../Components/Sidebar/Sidebar'
 import "./New.scss"
 import {useState} from "react"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from '../../firebase'
 const New = ({inputs,title}) => {
   const [file, setFile]=useState("");
+  const handleAdd = async(e) => {
+    e.preventDefault();
+    await setDoc(doc(db, "cities", "LA"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    });
+    
+  }
   console.log(file);
   return (
     <div className='new'>
@@ -21,7 +32,7 @@ const New = ({inputs,title}) => {
           alt="" className="itemImage"/>
           </div>
           <div className="right">
-            <form action="">
+            <form onSubmit={handleAdd}>
               <div className="formInput">
                 <label htmlFor="image">Image:<DriveFolderUploadIcon className='icon'/></label>
                 <input 
@@ -36,7 +47,7 @@ const New = ({inputs,title}) => {
                 <input type={input.type} placeholder={input.placeholder} />
               </div>
               ))}
-             <button>Send</button> 
+             <button type='submit'>Send</button> 
             </form>
           </div>
         </div>
