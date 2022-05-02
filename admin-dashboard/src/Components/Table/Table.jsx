@@ -16,7 +16,7 @@ const rows = [
     {
         id: 1143455,
         product: "Hp Laptop",
-        Img: <img src={HP} className="Image" />,
+        Img: <img src={HP} className="Image" alt='HP' />,
         customer: "Getasew Amsalu",
         date: "14 April",
         amount: 925.41,
@@ -26,7 +26,7 @@ const rows = [
     {
         id: 1143456,
         product: "Toshiba Laptop",
-        Img: <img src={Toshiba} className="Image" />,
+        Img: <img src={Toshiba} className="Image" alt='Toshiba'/>,
         customer: "Getasew Amsalu",
         date: "14 April",
         amount: 271.41,
@@ -36,7 +36,7 @@ const rows = [
     {
         id: 1143457,
         product: "Apple Laptop",
-        Img: <img src={Apple} className="Image" />,
+        Img: <img src={Apple} className="Image" alt=''/>,
         customer: "Getasew Amsalu",
         date: "14 April",
         amount: 2474.29,
@@ -46,7 +46,7 @@ const rows = [
     {
         id: 1143458,
         product: "Asus Laptop",
-        Img: <img src={Asus} className="Image" />,
+        Img: <img src={Asus} className="Image" alt=''/>,
         customer: "Getasew Amsalu",
         date: "14 April",
         amount: 870.91,
@@ -56,7 +56,7 @@ const rows = [
     {
         id: 1143459,
         product: "Lenovo Laptop",
-        Img: <img src={Lenovo} className="Image" />,
+        Img: <img src={Lenovo} className="Image" alt=''/>,
         customer: "Getasew Amsalu",
         date: "14 April",
         amount: 2081.13,
@@ -66,7 +66,7 @@ const rows = [
     {
         id: 1143460,
         product: "Dell Laptop",
-        Img: <img src={Dell} className="Image" />,
+        Img: <img src={Dell} className="Image" alt=''/>,
         customer: "Getasew Amsalu",
         date: "14 April",
         amount: 925.40,

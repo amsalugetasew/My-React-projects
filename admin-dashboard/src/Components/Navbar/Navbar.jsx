@@ -28,7 +28,7 @@ const Navbar = () => {
                 <div className="item"><FormatListBulletedOutlinedIcon className="icons"/>
                  </div>
                 <div className="item">
-                  <img src={Avater} className="avater" />
+                  <img src={Avater} className="avater" alt=""/>
                 </div>
             </div>
         </div>
