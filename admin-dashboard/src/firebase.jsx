@@ -1,9 +1,9 @@
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
-
+import { getStorage } from "firebase/storage";
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_KEY,
+  apiKey: "AIzaSyDsjF1EQYh8HEfKFfXJPrwlUrk6zoMpwtk",
   authDomain: "admin-dashboard-1d728.firebaseapp.com",
   projectId: "admin-dashboard-1d728",
   storageBucket: "admin-dashboard-1d728.appspot.com",
@@ -14,3 +14,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth();
+export const storage = getStorage(app);

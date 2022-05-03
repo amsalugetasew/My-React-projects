@@ -1,41 +1,41 @@
 export const userInputs=[
     {
-        id: 1,
+        id: "userName",
         label: "User Name",
         type: "text",
         placeholder: "Gechsew",
     },
     {
-        id: 2,
+        id: "displayName",
         label: "Full Name",
         type: "text",
         placeholder: "Getasew Amsalu",
     },
     {
-        id: 3,
+        id: "email",
         label: "Email",
         type: "email",
         placeholder: "amsalugetasew12@gmail.com",
     },
     {
-        id: 4,
+        id: "phone",
         label: "Phone",
         type: "text",
         placeholder: "+251-928-531-589",
     },
     {
-        id: 5,
+        id: "password",
         label: "Password",
         type: "password",
     },
     {
-        id: 6,
+        id: "address",
         label: "Address",
         type: "text",
         placeholder: "Marki, Gondar",
     },
     {
-        id: 7,
+        id: "country",
         label: "Country",
         type: "text",
         placeholder: "Ethiopia",

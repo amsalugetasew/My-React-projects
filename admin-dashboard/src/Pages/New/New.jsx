@@ -1,21 +1,66 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import "./New.scss"
 import { useState } from "react"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
-import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from '../../firebase';
+import {  doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { auth, db, storage } from '../../firebase';
+import {createUserWithEmailAndPassword } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
+  const [data, setData] = useState({});
+  useEffect(()=>{
+    const uploadFile=() =>{
+      const name = new Date().getTime() + file.name;
+      const storageRef = ref(storage, file.name);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+uploadTask.on('state_changed', 
+  (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');
+        break;
+        default:
+        break;
+    }
+  }, 
+  (error) => {
+    console.log(error);
+  }, 
+  () => {
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      setData((prev) => ({...prev, img:downloadURL}))
+    });
+  }
+);
+
+
+    };
+    file && uploadFile() 
+   }, [file]);
+  const handleInput = (e)=>{
+    const id = e.target.id;
+    const value= e.target.value;
+    setData({...data, [id]:value})
+  }
   const handleAdd = async (e) => {
     e.preventDefault();
-    // const users= setDoc(doc(db, "cities", "Ethiopia"), {
-    try {
-      const users = await addDoc(collection(db, "cities"), {
-        name: "Gondar",
-        state: "Amhara",
-        country: "Ethiopia",
+       try {
+      const res = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+        );
+      const users = await setDoc(doc(db, "Users", res.user.uid), {
+        ...data,
         timeStamp: serverTimestamp(),
       });
     }
@@ -51,7 +96,11 @@ const New = ({ inputs, title }) => {
               {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
-                  <input type={input.type} placeholder={input.placeholder} />
+                  <input
+                  id={input.id} 
+                  type={input.type} 
+                  placeholder={input.placeholder} 
+                  onChange={handleInput}/>
                 </div>
               ))}
               <button type="submit">Send</button>
