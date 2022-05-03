@@ -2,52 +2,59 @@ import React from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import "./New.scss"
-import {useState} from "react"
+import { useState } from "react"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
-import { doc, setDoc } from "firebase/firestore"; 
-import { db } from '../../firebase'
-const New = ({inputs,title}) => {
-  const [file, setFile]=useState("");
-  const handleAdd = async(e) => {
+import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { db } from '../../firebase';
+const New = ({ inputs, title }) => {
+  const [file, setFile] = useState("");
+  const handleAdd = async (e) => {
     e.preventDefault();
-    await setDoc(doc(db, "cities", "LA"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA"
-    });
-    
+    // const users= setDoc(doc(db, "cities", "Ethiopia"), {
+    try {
+      const users = await addDoc(collection(db, "cities"), {
+        name: "Gondar",
+        state: "Amhara",
+        country: "Ethiopia",
+        timeStamp: serverTimestamp(),
+      });
+    }
+    catch (errors) {
+      console.log(errors)
+    }
+    // const users = doc(db, 'cities', 'BJ');
+    // setDoc(cityRef, { capital: true }, { merge: true });
+    // console.log(users);
   }
-  console.log(file);
   return (
     <div className='new'>
-      <Sidebar/>
+      <Sidebar />
       <div className="newContainer">
-        <Navbar/>
+        <Navbar />
         <div className="top">
           <h1>{title}</h1>
         </div>
         <div className="bottom">
           <div className="left">
-          <img src={file ? URL.createObjectURL(file): "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"}
-          alt="" className="itemImage"/>
+            <img src={file ? URL.createObjectURL(file) : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"}
+              alt="" className="itemImage" />
           </div>
           <div className="right">
             <form onSubmit={handleAdd}>
               <div className="formInput">
-                <label htmlFor="image">Image:<DriveFolderUploadIcon className='icon'/></label>
-                <input 
-                type="file" id='file' 
-                onChange={e=>setFile(e.target.files[0])} 
-                // style={{display: "none"}}
+                <label htmlFor="image">Image:<DriveFolderUploadIcon className='icon' /></label>
+                <input
+                  type="file" id='file'
+                  onChange={e => setFile(e.target.files[0])}
                 />
               </div>
-              { inputs.map((input) => (
+              {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
-                <label>{input.label}</label>
-                <input type={input.type} placeholder={input.placeholder} />
-              </div>
+                  <label>{input.label}</label>
+                  <input type={input.type} placeholder={input.placeholder} />
+                </div>
               ))}
-             <button type='submit'>Send</button> 
+              <button type="submit">Send</button>
             </form>
           </div>
         </div>

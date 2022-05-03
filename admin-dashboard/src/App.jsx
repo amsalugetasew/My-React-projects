@@ -15,7 +15,6 @@ function App() {
   const RequireAuth = ({children}) =>{
     return currentUser ? children: <Navigate to="/login"/>;
   };
-  console.log(currentUser);
   return (
     <div className={darkMode ? "app dark": "app"}>
       <BrowserRouter>
@@ -28,9 +27,22 @@ function App() {
               </RequireAuth>
           }/>            
             <Route path="users">
-              <Route index element={<List />} />
-              <Route path=":userId" element={<Single />} />
-              <Route path="new" element={<New inputs={userInputs} title="Add New Users"/>} />
+              <Route index element={
+                <RequireAuth>
+                  <List />
+                </RequireAuth>
+                            } />
+              <Route path=":userId" element={
+                <RequireAuth>
+                <Single />
+              </RequireAuth>
+              }/>
+              <Route path="new" element={
+              
+              <RequireAuth>
+                <New inputs={userInputs} title="Add New Users"/>
+              </RequireAuth>
+              } />
             </Route>
           </Route>
           <Route>
