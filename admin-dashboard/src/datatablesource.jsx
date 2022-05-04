@@ -1,9 +1,26 @@
 import Avater from './Image/profile.jpg'
-export const userColumns=[
-    { field: 'id', headerName: 'ID', width: 10 },
-    { field: 'firstName', headerName: 'First name', width: 80 },
-    { field: 'lastName', headerName: 'Last name', width: 80 },
-    {field: 'age', headerName: 'Age', type: 'number', width: 50},
+export const userColumns = [
+    {
+        field: 'id',
+        headerName: 'ID',
+        width: 10
+    },
+    {
+        field: 'firstName',
+        headerName: 'First name',
+        width: 80
+    },
+    {
+        field: 'lastName',
+        headerName: 'Last name',
+        width: 80
+    },
+    {
+        field: 'age',
+        headerName: 'Age',
+        type: 'number',
+        width: 50
+    },
     {
         field: 'fullName',
         headerName: 'Full name',
@@ -14,7 +31,7 @@ export const userColumns=[
             `${params.row.firstName || ''} ${params.row.lastName || ''}`,
 
     },
-       {
+    {
         field: 'profile',
         headerName: 'Profile Picture',
         description: 'This column has a value getter and is not sortable.',
@@ -23,8 +40,8 @@ export const userColumns=[
         renderCell: (params) => {
             return (
                 <>
-                <img src={Avater} className="avater" alt='' />
-                 </>
+                    <img src={Avater} className="avater" alt='' />
+                </>
             );
         },
     },
@@ -44,24 +61,25 @@ export const userColumns=[
             );
         },
     },
-    {field: 'status', 
-    headerName: 'Status', 
-    width: 100,
-    renderCell: (params)=>{
-        return(
-            <div className="celWidthStatus" id={params.row.status}>{params.row.status}</div>
-        )
-    }
-},
-//     {field: 'edit', 
-//     headerName: 'Edit', 
-//     width: 100,
-//     renderCell: (parms)=>{
-//         return(
-//             <div className="celWidthEdit">{parms.row.edit}</div>
-//         )
-//     }
-// },
+    {
+        field: 'status',
+        headerName: 'Status',
+        width: 100,
+        renderCell: (params) => {
+            return (
+                <div className="celWidthStatus" id={params.row.status}>{params.row.status}</div>
+            )
+        }
+    },
+    //     {field: 'edit', 
+    //     headerName: 'Edit', 
+    //     width: 100,
+    //     renderCell: (parms)=>{
+    //         return(
+    //             <div className="celWidthEdit">{parms.row.edit}</div>
+    //         )
+    //     }
+    // },
     // {field: 'delete',
     // headerName: 'Delete',
     //  width: 100,
@@ -72,15 +90,15 @@ export const userColumns=[
     // }
     // },
 ]
-export const userRows=[
-    { id: 1, lastName: 'Amsalu', firstName: 'Awoke', age: 24, status: 'Active', edit: '+', delete: '-'},
-    { id: 2, lastName: 'Gizachew', firstName: 'Abibual', age: 28, status: 'Pending' , edit: '+', delete: '-'},
-    { id: 3, lastName: 'Tadesse', firstName: 'Getachew', age: 28, status: 'Passive' , edit: '+', delete: '-'},
-    { id: 4, lastName: 'Eshetie', firstName: 'Tewodros', age: 26, status: 'Pending' , edit: '+', delete: '-'},
-    { id: 5, lastName: 'Gizaw', firstName: 'Tilahun', age: 26, status: 'Active' , edit: '+', delete: '-'},
-    { id: 6, lastName: 'Mulat', firstName: 'Mequanint', age: 26, status: 'Passive' , edit: '+', delete: '-'},
-    { id: 7, lastName: 'Muche', firstName: 'Mulu', age: 28, status: 'Active' , edit: '+', delete: '-'},
-    { id: 8, lastName: 'Amsalu', firstName: 'Getasew', age: 28, status: 'Pending' , edit: '+', delete: '-'},
-    { id: 9, lastName: 'Amsalu', firstName: 'Belaynesh', age: 24, status: 'Active' , edit: '+', delete: '-'},
+export const userRows = [
+    { id: 1, lastName: 'Amsalu', firstName: 'Awoke', age: 24, status: 'Active', edit: '+', delete: '-' },
+    { id: 2, lastName: 'Gizachew', firstName: 'Abibual', age: 28, status: 'Pending', edit: '+', delete: '-' },
+    { id: 3, lastName: 'Tadesse', firstName: 'Getachew', age: 28, status: 'Passive', edit: '+', delete: '-' },
+    { id: 4, lastName: 'Eshetie', firstName: 'Tewodros', age: 26, status: 'Pending', edit: '+', delete: '-' },
+    { id: 5, lastName: 'Gizaw', firstName: 'Tilahun', age: 26, status: 'Active', edit: '+', delete: '-' },
+    { id: 6, lastName: 'Mulat', firstName: 'Mequanint', age: 26, status: 'Passive', edit: '+', delete: '-' },
+    { id: 7, lastName: 'Muche', firstName: 'Mulu', age: 28, status: 'Active', edit: '+', delete: '-' },
+    { id: 8, lastName: 'Amsalu', firstName: 'Getasew', age: 28, status: 'Pending', edit: '+', delete: '-' },
+    { id: 9, lastName: 'Amsalu', firstName: 'Belaynesh', age: 24, status: 'Active', edit: '+', delete: '-' },
 
 ];

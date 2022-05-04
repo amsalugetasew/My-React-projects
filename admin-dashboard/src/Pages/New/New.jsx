@@ -12,15 +12,17 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [data, setData] = useState({});
+  const [per, setPer] = useState(null);
   useEffect(()=>{
     const uploadFile=() =>{
-      const name = new Date().getTime() + file.name;
+      // const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, file.name);
       const uploadTask = uploadBytesResumable(storageRef, file);
 uploadTask.on('state_changed', 
   (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log('Upload is ' + progress + '% done');
+    setPer(progress);
     switch (snapshot.state) {
       case 'paused':
         console.log('Upload is paused');
@@ -59,7 +61,7 @@ uploadTask.on('state_changed',
         data.email,
         data.password
         );
-      const users = await setDoc(doc(db, "Users", res.user.uid), {
+       await setDoc(doc(db, "Users", res.user.uid), {
         ...data,
         timeStamp: serverTimestamp(),
       });
@@ -103,7 +105,7 @@ uploadTask.on('state_changed',
                   onChange={handleInput}/>
                 </div>
               ))}
-              <button type="submit">Send</button>
+              <button disabled={per !== null && per < 100} type="submit">Send</button>
             </form>
           </div>
         </div>
