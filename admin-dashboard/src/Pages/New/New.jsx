@@ -102,7 +102,8 @@ uploadTask.on('state_changed',
                   id={input.id} 
                   type={input.type} 
                   placeholder={input.placeholder} 
-                  onChange={handleInput}/>
+                  onChange={handleInput}
+                  />
                 </div>
               ))}
               <button disabled={per !== null && per < 100} type="submit">Send</button>
