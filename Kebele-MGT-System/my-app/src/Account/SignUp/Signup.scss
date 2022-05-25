@@ -1,0 +1,66 @@
+.signup {
+    display: flex;
+
+    .signupContainer {
+        .widgets {
+            height: 68vh;
+            display: flex;
+
+            .left {
+                background-color: #7a9;
+                width: 80%;
+            }
+
+            .right {
+                background-color: #a97;
+                width: 80%;
+            }
+
+            .formInput {
+                label {
+                    display: flex;
+                    justify-content: center;
+
+                    .icon {
+                        cursor: pointer;
+                    }
+                }
+
+                input {
+                    border: 1px solid rgb(33, 25, 25);
+                }
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                background-color: rgb(182, 207, 231);
+                justify-content: center;
+                height: 100%;
+
+                input {
+                    width: 200px;
+                    height: 35px;
+                    align-items: center;
+                    background-color: #f6f4fc7a;
+                }
+
+                button {
+                    width: 200px;
+                    height: 40px;
+                    margin: 10px;
+                    border: none;
+                    background-color: rgba(35, 3, 246, 0.729);
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .Footer {
+            display: flex;
+            flex-direction: column;
+            height: 16vh;
+
+        }
+    }
+}

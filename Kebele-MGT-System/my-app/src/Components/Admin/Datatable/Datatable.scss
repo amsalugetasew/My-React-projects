@@ -1,0 +1,113 @@
+.datatable {
+    // background-color: #fff;
+    height: 500px;
+    padding: 30px;
+    width: 100%;
+    .dataTableTitle{
+        width: 90%;
+        font-size: 24px;
+        color: gray;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .link{
+            text-decoration: none;
+            color: green;
+            font-size: small;
+            font-weight: 400;
+            border: 1px solid green;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+    .whitespace {
+        white-space: pre-wrap;
+    }
+
+    .avater {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        align-items: end;
+    }
+
+    .celWidthStatus {
+        padding: 5px;
+        border-radius: 5px;
+
+        &#Active {
+            color: green;
+            background-color: rgb(94, 240, 94);
+        }
+
+        &#Pending {
+            color: goldenrod;
+            background-color: rgb(240, 223, 94);
+        }
+
+        &#Passive {
+            color: crimson;
+            background-color: rgb(240, 94, 94);
+        }
+    }
+
+    .cellAction {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .viewButton {
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: darkblue;
+            border: 1px dotted rgba(0, 0, 139, 0.355);
+            background-color: rgb(165, 165, 246);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .editButton {
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: darkgreen;
+            border: 1px dotted rgba(3, 242, 23, 0.585);
+            background-color: rgba(8, 244, 15, 0.774);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .deleteButton {
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: crimson;
+            border: 1px dotted rgba(237, 5, 5, 0.355);
+            background-color: rgb(225, 81, 124);
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    .celWidthEdit {
+        padding: 5px;
+        border-radius: 30%;
+        background-color: rgb(174, 252, 174);
+        color: green;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .celWidthDelet {
+        padding: 5px;
+        border-radius: 30%;
+        background-color: rgb(234, 144, 144);
+        color: red;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .headerName {
+        font-weight: bold;
+    }
+}
